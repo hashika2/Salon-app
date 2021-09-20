@@ -11,6 +11,7 @@ import Store from './components/store/Store';
 import StackHeader from './util/StackHeader';
 import Styling from './components/store/Styling';
 import DateSelect from './components/booking/DateSelect';
+import PickTime from './components/booking/PickTime';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen name="Store" component={Store} />
         <Stack.Screen name="Styling" component={Styling}  options={{ title: 'Styling' }}/>
         <Stack.Screen name="DateSelect" component={DateSelect}  options={{ title: 'Confirm Booking' }}/>
+        <Stack.Screen name="PickTime" component={PickTime}  options={{ title: 'Confirm Booking' }}/>
       </Stack.Navigator>
     </NavigationContainer>)
 }
