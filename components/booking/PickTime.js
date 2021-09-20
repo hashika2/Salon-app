@@ -1,23 +1,35 @@
 import React, { useEffect } from 'react';
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	StyleSheet,
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default PickTime = ({ navigattion }) => {
+export default (PickTime = ({ navigattion }) => {
 	const [ date, setDate ] = React.useState('');
-	const startdate = date.toString();
-	const dateArray = [ '2021-09-23', '2021-09-24', '2021-09-27' ];
-
+	const timeRange = [
+		{
+			time1: '10.00 am',
+			time2: '1.00 pm'
+		},
+		{
+			time1: '10.00 am',
+			time2: '1.00 pm'
+		},
+		{
+			time1: '10.00 am',
+			time2: '1.00 pm'
+		}
+	];
 	useEffect(() => {}, [ date ]);
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Pick Time</Text>
-			<View style={styles.calendar}>
-			</View>
+			{timeRange.map((time) => {
+				return (
+					<View style={styles.dayTime}>
+						<Text style={styles.dayTime1}>{time.time1}</Text>
+						<Text style={styles.dayTime2}>{time.time2}</Text>
+					</View>
+				);
+			})}
 			<View style={styles.nextButton}>
 				{/* <Text>{startdate}</Text> */}
 				<TouchableOpacity style={styles.iconBtn} onPress={() => navigation.navigate('Store')}>
@@ -27,7 +39,7 @@ export default PickTime = ({ navigattion }) => {
 			</View>
 		</View>
 	);
-};
+});
 
 const styles = StyleSheet.create({
 	container: {
@@ -59,6 +71,28 @@ const styles = StyleSheet.create({
 		width: 50,
 		fontSize: 20,
 		height: 40,
-		borderRadius:20
-	}
+		borderRadius: 20
+	},
+	dayTime: {
+		flexDirection: 'row',
+        alignItems: 'center',
+        // justifyContent: 'center',
+        marginTop:40
+	},
+    dayTime1:{
+        marginTop:10,
+        marginLeft:50,
+        backgroundColor:"green",
+        width:100,
+        height:30,
+        textAlign:"center"
+    },
+    dayTime2:{
+        marginTop:10,
+        marginLeft:100,
+        backgroundColor:"green",
+        width:100,
+        height:30,
+        textAlign:"center"
+    }
 });
