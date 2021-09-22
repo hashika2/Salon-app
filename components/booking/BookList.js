@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
 		// marginLeft:20,
 		marginRight: 20
 	},
-	columnText: {},
+	columnText: {
+        bottom:15
+    },
 	name1: {
 		marginTop: 10,
 		color: 'black',
