@@ -11,7 +11,7 @@ import {
 	ScrollView
 } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
-import getStoreData from '../../service/StoreData';
+import {getStoreData} from '../../service/StoreData';
 
 export default (Store = ({ navigation }) => {
 	const [ location, onChangeLocation ] = React.useState(null);
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between'
 	},
 	cardContainer: {
-		width: 300,
+		width: 320,
 		height: 100
 	},
 	user: {

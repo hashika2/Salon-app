@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default (Login = ({ navigation }) => {
+export default Login = ({ navigation }) => {
 	const [ text, onChangeText ] = React.useState(null);
 	const [ number, onChangeNumber ] = React.useState(null);
 
@@ -59,7 +59,7 @@ export default (Login = ({ navigation }) => {
 			</Text>
 		</View>
 	);
-});
+};
 
 const styles = StyleSheet.create({
 	container: {
