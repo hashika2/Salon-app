@@ -28,6 +28,9 @@ export default Styling = ({navigation, route}) => {
           </View>
         </View>
       </ImageBackground>
+      <View>
+      <Text style={styles.title}>Styling</Text>
+      </View>
       <View style={styles.styleinList}>
         <ScrollView>
         {
@@ -66,10 +69,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:"white"
   },
-  homeTitle:{
+  title:{
+    top:-150,
     fontSize: 25,
     fontWeight: "bold",
     color:"green",
+    textAlign:"center"
     // fontFamily:"fangsong"
   },
   coverImage: {
