@@ -12,25 +12,27 @@ import StackHeader from './util/StackHeader';
 import Styling from './components/store/Styling';
 import DateSelect from './components/booking/DateSelect';
 import PickTime from './components/booking/PickTime';
+import BookList from './components/booking/BookList';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return ( <NavigationContainer>
       <Stack.Navigator initialRouteName="Home"
-        // headerMode="screen"
+        headerMode="screen"
         // screenOptions={{
         //   header:({scene,navigation})=>(
         //     <StackHeader scene={scene} navigation={navigation}/>
         //   )
         // }}
       >
-        <Stack.Screen name="Home" component={Home}  options={{ title: '' }}/>
-        <Stack.Screen name="Login" component={Login}  options={{ title: '' }}/>
-        <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="Store" component={Store} />
-        <Stack.Screen name="Styling" component={Styling}  options={{ title: 'Styling' }}/>
+        <Stack.Screen name="Home" component={Home}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Login" component={Login}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Register" component={Register}  options={{ headerShown: false }} />
+        <Stack.Screen name="Store" component={Store} style={styles.appbar} />
+        <Stack.Screen name="Styling" component={Styling}  options={{ headerShown: false }}/>
         <Stack.Screen name="DateSelect" component={DateSelect}  options={{ title: 'Confirm Booking' }}/>
-        <Stack.Screen name="PickTime" component={PickTime}  options={{ title: 'Confirm Booking' }}/>
+        <Stack.Screen name="PickTime" component={PickTime} options={{ title: 'Confirm Booking' }}/>
+        <Stack.Screen name="BookList" component={BookList} options={{ title: 'Your Appoinment' }}/>
       </Stack.Navigator>
     </NavigationContainer>)
 }
@@ -42,6 +44,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  appbar:{
+    backgroundColor:"green"
+  },  
   homeTitle:{
     fontSize: 25,
     fontWeight: "bold",
