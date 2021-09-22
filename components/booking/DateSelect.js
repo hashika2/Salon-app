@@ -25,6 +25,10 @@ export default (DateSelect = ({ navigation }) => {
 					 disabledDatesTextStyle={{backgroundColor:"orange", color:"black",borderRadius:15, width:30,height:25,textAlign:"center"}}
 					 onDateChange = {date => onDateChange(date)}
 				/>
+				<View style={{flexDirection: 'row',paddingTop:40, marginLeft:30}}>
+				<Icon name="circle" size={25} color="orange"/>
+				<Text> Already Booked days</Text>
+				</View>
 			</View>
 			<View style={styles.nextButton}>
 				{/* <Text>{startdate}</Text> */}
@@ -57,12 +61,15 @@ const styles = StyleSheet.create({
 	iconBtn: {
 		width: 100,
 		backgroundColor: 'green',
-		alignItems: 'center'
+		alignItems: 'center',
+		padding:5,
+		height:40
 	},
 	nextButton: {
 		marginTop: '70%',
 		left: '60%',
-		flex: 3
+		flex: 3,
+		textAlign:"center"
 	},
 	next: {
 		color: 'white',
