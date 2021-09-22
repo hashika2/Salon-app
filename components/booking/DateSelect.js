@@ -8,10 +8,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default (DateSelect = ({ navigation }) => {
 	const [ date, setDate ] = React.useState('');
 	const onDateChange = (date) => {
-		console.log(date.dateString, '******');
+		console.log(date, '******');
 		setDate(date.dateString);
 	};
-	const desableDates = ['2021-09-23T06:56:36.267Z','2021-09-24T06:56:36.267Z']
+	const desableDates = ['2021-09-23T06:56:36.267Z','2021-09-24T06:56:36.267Z','2021-09-03T06:56:36.267Z']
 	useEffect(() => {}, [ date ]);
 	return (
 		<View style={styles.container}>
@@ -22,36 +22,9 @@ export default (DateSelect = ({ navigation }) => {
 					 todayBackgroundColor={'transparent'}
 					//  minDate={today}
 					 disabledDates= {desableDates}
-					 disabledDatesTextStyle={{backgroundColor:"orange", color:"black"}}
+					 disabledDatesTextStyle={{backgroundColor:"orange", color:"black",borderRadius:15, width:30,height:25,textAlign:"center"}}
+					 onDateChange = {date => onDateChange(date)}
 				/>
-				{/* <Calendar
-					markingType={'custom'}
-					markedDates={{
-						'2021-09-25': {
-							customStyles: {
-								container: {
-									backgroundColor: 'orange'
-								},
-								text: {
-									color: 'black',
-									fontWeight: 'bold'
-								}
-							}
-						},
-						date: {
-							customStyles: {
-								container: {
-									backgroundColor: 'white',
-									elevation: 2
-								},
-								text: {
-									color: 'blue'
-								}
-							}
-						}
-					}}
-					onDayPress={(day) => onDateChange(day)}
-				/> */}
 			</View>
 			<View style={styles.nextButton}>
 				{/* <Text>{startdate}</Text> */}
