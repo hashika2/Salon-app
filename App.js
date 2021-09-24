@@ -13,6 +13,7 @@ import Styling from './components/store/Styling';
 import DateSelect from './components/booking/DateSelect';
 import PickTime from './components/booking/PickTime';
 import BookList from './components/booking/BookList';
+import Appoinment from './components/booking/Appoinment';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="DateSelect" component={DateSelect}  options={{ title: 'Confirm Booking' }}/>
         <Stack.Screen name="PickTime" component={PickTime} options={{ title: 'Confirm Booking' }}/>
         <Stack.Screen name="BookList" component={BookList} options={{ title: 'Your Appoinment' }}/>
+        <Stack.Screen name="Appoinment" component={Appoinment}options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>)
 }
