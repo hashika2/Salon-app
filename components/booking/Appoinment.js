@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, ImageBackground, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import { Card, ListItem, Icon } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import getStyleData from '../../service/StyleData';
 
 export default (Appoinment = ({ navigation, route }) => {
-	const { name, avatar, date,address, price } = route.params;
-	const users = getStyleData();
+	const { name, avatar, date, address, price } = route.params;
+	// const users = getStyleData();
 	return (
 		<View style={styles.container}>
 			<ImageBackground
@@ -29,22 +29,33 @@ export default (Appoinment = ({ navigation, route }) => {
 			</ImageBackground>
 			<View style={styles.styleinList}>
 				<Card style={styles.cardContainer}>
-					<ListItem  style={styles.cardContainer}>
+					{/* <ListItem style={styles.cardContainer}> */}
 					<View style={styles.user}>
 						<View style={styles.columnText}>
-						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+							<Icon name="home" style={styles.IconView} size={25} color="green" />
 							<Text style={styles.name1}>{address}</Text>
 						</View>
-                        <View style={styles.columnText}>
-						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+						<View style={styles.columnText}>
+							<Icon name="star" style={styles.IconView} size={25} color="green" />
 							<Text style={styles.name2}>Starting ${price}</Text>
 						</View>
-                        <View style={styles.columnText}>
-						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+						<View style={styles.columnText}>
+							<Icon name="star" style={styles.IconView} size={25} color="green" />
 							<Text>{date} min</Text>
 						</View>
+						<View>
+							<Text style={{ fontSize: 15, fontWeight: '700' }}>Service</Text>
+							<View style={styles.serviceText}>
+								<Text>Hair Styling</Text>
+								<Text>${price}</Text>
+							</View>
+                            <View style={styles.serviceText}>
+								<Text>Tatal Price</Text>
+								<Text>${price}</Text>
+							</View>
+						</View>
 					</View>
-					</ListItem>
+					{/* </ListItem> */}
 				</Card>
 			</View>
 		</View>
@@ -63,6 +74,9 @@ const styles = StyleSheet.create({
 		color: 'green',
 		textAlign: 'center'
 		// fontFamily:"fangsong"
+	},
+	user: {
+		backgroundColor: 'grey'
 	},
 	coverImage: {
 		width: '100%',
@@ -95,12 +109,12 @@ const styles = StyleSheet.create({
 		color: 'white'
 	},
 	cardContainer: {
-		backgroundColor: '#ffff',
 		width: 300,
-        height:250
+		height: 300
 	},
 	styleinList: {
-		bottom: 140
+		bottom: 140,
+		width: '100%'
 	},
 	styleImage: {
 		width: 80,
@@ -109,6 +123,10 @@ const styles = StyleSheet.create({
 	},
 	columnText: {
 		flexDirection: 'row',
-        margin:5
+		margin: 5
+	},
+	serviceText: {
+		flexDirection: 'row',
+		justifyContent: 'space-between'
 	}
 });
