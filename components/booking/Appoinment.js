@@ -1,19 +1,11 @@
 import React from 'react';
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	StyleSheet,
-	Image,
-	ImageBackground,
-	ScrollView,
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, ImageBackground, ScrollView } from 'react-native';
 import { Card, ListItem, Icon } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import getStyleData from '../../service/StyleData';
 
-export default Appoinment = ({ navigation, route }) => {
-	const { name, avatar,date,price } = route.params;
+export default (Appoinment = ({ navigation, route }) => {
+	const { name, avatar, date,address, price } = route.params;
 	const users = getStyleData();
 	return (
 		<View style={styles.container}>
@@ -35,33 +27,29 @@ export default Appoinment = ({ navigation, route }) => {
 					</View>
 				</View>
 			</ImageBackground>
-			<View>
-				<Text style={styles.title}>Styling</Text>
-			</View>
 			<View style={styles.styleinList}>
-							<TouchableOpacity  onPress={() => navigation.navigate('DateSelect')}>
-								<Card>
-									{/* <Card.Divider/> */}
-									<ListItem  style={styles.cardContainer}>
-										<View  style={styles.user}>
-											<Image
-												style={styles.styleImage}
-												resizeMode="cover"
-												source={{ uri: avatar }}
-											/>
-											<View style={styles.columnText}>
-												<Text style={styles.name1}>{name}</Text>
-												<Text style={styles.name2}>Starting ${price}</Text>
-												<Text style={[ t.bgRed400 ]}>{date} min</Text>
-											</View>
-										</View>
-									</ListItem>
-								</Card>
-							</TouchableOpacity>
+				<Card style={styles.cardContainer}>
+					<ListItem  style={styles.cardContainer}>
+					<View style={styles.user}>
+						<View style={styles.columnText}>
+						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+							<Text style={styles.name1}>{address}</Text>
+						</View>
+                        <View style={styles.columnText}>
+						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+							<Text style={styles.name2}>Starting ${price}</Text>
+						</View>
+                        <View style={styles.columnText}>
+						    <Icon name="star" style={styles.IconView} size={25} color="green" />
+							<Text>{date} min</Text>
+						</View>
+					</View>
+					</ListItem>
+				</Card>
 			</View>
 		</View>
 	);
-};
+});
 
 const styles = StyleSheet.create({
 	container: {
@@ -109,7 +97,7 @@ const styles = StyleSheet.create({
 	cardContainer: {
 		backgroundColor: '#ffff',
 		width: 300,
-		height: 100
+        height:250
 	},
 	styleinList: {
 		bottom: 140
@@ -119,7 +107,8 @@ const styles = StyleSheet.create({
 		height: 80,
 		marginRight: 20
 	},
-	user: {
-		flexDirection: 'row'
+	columnText: {
+		flexDirection: 'row',
+        margin:5
 	}
 });
