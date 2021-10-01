@@ -1,18 +1,15 @@
-import moment from 'moment';
 import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default (DateSelect = ({ navigation }) => {
-	const [ date, setDate ] = React.useState('');
+	const [ selectDate, setDate ] = React.useState('');
 	const onDateChange = (date) => {
-		console.log(date, '******');
-		setDate(date.dateString);
+		setDate(date);
 	};
 	const desableDates = ['2021-09-23T06:56:36.267Z','2021-09-24T06:56:36.267Z','2021-09-03T06:56:36.267Z']
-	useEffect(() => {}, [ date ]);
+	useEffect(() => {}, [ selectDate ]);
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Select Date</Text>
@@ -24,6 +21,9 @@ export default (DateSelect = ({ navigation }) => {
 					 disabledDates= {desableDates}
 					 disabledDatesTextStyle={{backgroundColor:"orange", color:"black",borderRadius:15, width:30,height:25,textAlign:"center"}}
 					 onDateChange = {date => onDateChange(date)}
+					 selectedStartDate='2021-10-01T00:00:00.00Z'
+					 minDate= '2021-10-01T00:00:00.00Z'
+					 maxDate= '2021-10-31T00:00:00.00Z'
 				/>
 				<View style={{flexDirection: 'row',paddingTop:40, marginLeft:30}}>
 				<Icon name="circle" size={25} color="orange"/>
@@ -32,7 +32,7 @@ export default (DateSelect = ({ navigation }) => {
 			</View>
 			<View style={styles.nextButton}>
 				{/* <Text>{startdate}</Text> */}
-				<TouchableOpacity style={styles.iconBtn} onPress={() => navigation.navigate('PickTime')}>
+				<TouchableOpacity style={styles.iconBtn} onPress={() => navigation.navigate('PickTime',selectDate)}>
 					{/* <Icon name="facebook" size={35} color="orange"/> */}
 					<Text style={styles.next}>Next</Text>
 				</TouchableOpacity>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
 		width: 100,
 		backgroundColor: 'green',
 		alignItems: 'center',
+		borderRadius: 25,
 		padding:5,
 		height:40
 	},

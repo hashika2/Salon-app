@@ -1,6 +1,9 @@
 import { AsyncStorage } from 'react-native';
+import axios from 'axios';
 
-export default getStoreData = () => {
+export const getStoreData = () => {
+    console.log("&&&&&&&&")
+    axios.get('http://192.168.43.93:3000/api/store/all').then(res => console.log("*************",res)).catch(err=> console.log("#######",err));
     const res = [
             {
                 name: 'Hashika Maduranga',
@@ -38,6 +41,50 @@ export default getStoreData = () => {
                 price: "10",
                 avatar: 'https://media.istockphoto.com/photos/business-woman-lady-boss-in-beauty-salon-making-hairdress-and-looking-picture-id1147811403?k=20&m=1147811403&s=612x612&w=0&h=lBbmmhPxES33OgnJgkzvtURRSs_gRvD7kX65gETQ9r8='
             }
+    ]
+    // AsyncStorage.setItem('store-data', res)
+    return res;
+}
+
+export const getBookedData = () => {
+    // axios.get('http://192.168.43.93:3000/api/store/all').then(res => console.log("*************",res)).catch(err=> console.log("#######",err));
+    const res = [
+            {
+                name: 'Hashika Maduranga',
+                date:"2021-10-01T00:00:00.00Z",
+                address:"Bentota Kanda, Galle",
+                price: "10",
+                validity: "Expired",
+                color: "red",
+                avatar: 'https://media.istockphoto.com/photos/business-woman-lady-boss-in-beauty-salon-making-hairdress-and-looking-picture-id1147811403?k=20&m=1147811403&s=612x612&w=0&h=lBbmmhPxES33OgnJgkzvtURRSs_gRvD7kX65gETQ9r8='
+            },
+            {
+                name: 'Hashika Maduranga',
+                date:"2021-10-01T00:00:00.00Z",
+                address:"Bentota Kanda, Galle",
+                price: "10",
+                validity: "Expired",
+                color: "red",
+                avatar: 'https://media.istockphoto.com/photos/business-woman-lady-boss-in-beauty-salon-making-hairdress-and-looking-picture-id1147811403?k=20&m=1147811403&s=612x612&w=0&h=lBbmmhPxES33OgnJgkzvtURRSs_gRvD7kX65gETQ9r8='
+            },
+            {
+                name: 'Hashika Maduranga',
+                date:"2021-10-01T00:00:00.00Z",
+                address:"Bentota Kanda, Galle",
+                price: "10",
+                validity: "Expired",
+                color: "red",
+                avatar: 'https://media.istockphoto.com/photos/business-woman-lady-boss-in-beauty-salon-making-hairdress-and-looking-picture-id1147811403?k=20&m=1147811403&s=612x612&w=0&h=lBbmmhPxES33OgnJgkzvtURRSs_gRvD7kX65gETQ9r8='
+            },
+            {
+                name: 'Hashika Maduranga',
+                date:"2021-10-01T00:00:00.00Z",
+                address:"Bentota Kanda, Galle",
+                price: "10",
+                validity: "Expired",
+                color: "red",
+                avatar: 'https://media.istockphoto.com/photos/business-woman-lady-boss-in-beauty-salon-making-hairdress-and-looking-picture-id1147811403?k=20&m=1147811403&s=612x612&w=0&h=lBbmmhPxES33OgnJgkzvtURRSs_gRvD7kX65gETQ9r8='
+            },
     ]
     // AsyncStorage.setItem('store-data', res)
     return res;

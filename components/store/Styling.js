@@ -3,18 +3,12 @@ import {
 	View,
 	Text,
 	TouchableOpacity,
-	StatusBar,
-	SafeAreaView,
 	StyleSheet,
-	TextInput,
 	Image,
 	ImageBackground,
 	ScrollView,
-	AsyncStorage
 } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Card, ListItem, Icon } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import getStyleData from '../../service/StyleData';
 
@@ -124,7 +118,7 @@ const styles = StyleSheet.create({
 		height: 100
 	},
 	styleinList: {
-		bottom: 130
+		bottom: 140
 	},
 	styleImage: {
 		width: 80,
