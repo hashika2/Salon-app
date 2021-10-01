@@ -1,23 +1,39 @@
 import React from 'react';
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	StyleSheet,
-	ScrollView
-} from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
-import {getBookedData} from '../../service/StoreData';
+import AwesomeAlert from 'react-native-awesome-alerts';
+import { getBookedData } from '../../service/StoreData';
 
-export default BookList = ({ navigation }) => {
+export default (BookList = ({ navigation }) => {
 	const lists = getBookedData();
+	const [ showAlert, setShowAlert ] = React.useState(true);
+
 	return (
 		<View style={styles.container}>
+			<AwesomeAlert
+				show={showAlert}
+				showProgress={false}
+				title="Success !"
+				message="Your Appoinment is booked successfully"
+				closeOnTouchOutside={true}
+				closeOnHardwareBackPress={false}
+				showCancelButton={true}
+				showConfirmButton={true}
+				//   cancelText="No, cancel"
+				confirmText="Ok"
+				confirmButtonColor="green"
+				//   onCancelPressed={() => {
+				//    setShowAlert(false)
+				//   }}
+				onConfirmPressed={() => {
+					setShowAlert(false);
+				}}
+			/>
 			<View>
 				<ScrollView>
 					{lists.map((list, i) => {
 						return (
-							<TouchableOpacity key={i}>
+							<TouchableOpacity key={i} onPress={() => navigation.navigate('Appoinment',list)}>
 								<Card key={i}>
 									{/* <Card.Divider/> */}
 									<ListItem key={i} style={styles.cardContainer}>
@@ -25,7 +41,7 @@ export default BookList = ({ navigation }) => {
 											<View style={styles.columnText}>
 												<Text style={styles.name1}>{list.name}</Text>
 												<Text style={styles.name2}>{list.date}</Text>
-												<Text style={{color:list.color}}>{list.validity}</Text>
+												<Text style={{ color: list.color }}>{list.validity}</Text>
 											</View>
 										</View>
 									</ListItem>
@@ -38,7 +54,7 @@ export default BookList = ({ navigation }) => {
 			</View>
 		</View>
 	);
-};
+});
 
 const styles = StyleSheet.create({
 	container: {
@@ -70,12 +86,12 @@ const styles = StyleSheet.create({
 		marginRight: 20
 	},
 	columnText: {
-        bottom:15
-    },
+		bottom: 15
+	},
 	name1: {
 		marginTop: 10,
 		color: 'black',
-        fontWeight:"bold"
+		fontWeight: 'bold'
 	},
 	name2: {
 		marginTop: 10,
@@ -84,11 +100,11 @@ const styles = StyleSheet.create({
 	name3: {
 		marginTop: 5,
 		color: 'white',
-        textAlign:"center",
-        left:300,
-        bottom:90,
-        width:35,
-        backgroundColor:"green"
+		textAlign: 'center',
+		left: 300,
+		bottom: 90,
+		width: 35,
+		backgroundColor: 'green'
 	},
 	forgot_button: {
 		marginLeft: 10
