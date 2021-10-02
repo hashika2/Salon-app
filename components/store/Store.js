@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
 	View,
 	Text,
@@ -15,8 +15,13 @@ import {getStoreData} from '../../service/StoreData';
 
 export default (Store = ({ navigation }) => {
 	const [ location, onChangeLocation ] = React.useState(null);
-	const users = getStoreData();
-	return (
+	const [inputName, setInputName] = React.useState(null);
+	const [stores, setStore] = React.useState([]);
+
+	useEffect(()=>{
+		setStore(getStoreData(location));
+	},[location])
+	return stores.length>0?(
 		<View style={styles.container}>
 			<TextInput
 				style={styles.input}
@@ -27,7 +32,7 @@ export default (Store = ({ navigation }) => {
 			/>
 			<View>
 				<ScrollView>
-					{users.map((u, i) => {
+					{stores.map((u, i) => {
 						return (
 							<TouchableOpacity key={i} onPress={() => navigation.navigate('Styling', u)}>
 								<Card key={i}>
@@ -49,7 +54,7 @@ export default (Store = ({ navigation }) => {
 				</ScrollView>
 			</View>
 		</View>
-	);
+	):<Text>Loading ....</Text>;
 });
 
 const styles = StyleSheet.create({
@@ -98,8 +103,9 @@ const styles = StyleSheet.create({
 		height: 40,
 		width: 240,
 		marginTop: 60,
-		borderWidth: 1,
-		padding: 10
+		borderWidth: 0,
+		padding: 10,
+		backgroundColor:"grey"
 	},
 	forgot_button: {
 		marginLeft: 10
