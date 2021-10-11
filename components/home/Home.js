@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// const {width, height} = Dimensions.get('window');
 
 export default function Home({navigation}) {
   return (
@@ -31,15 +33,18 @@ const styles = StyleSheet.create({
     // fontFamily:"fangsong"
   },
    image :{
+    // flex:2,
+    // aspectRatio:1,
     width: 250,
     height: 400,
     marginBottom: 40,
-    marginTop: 100,
+    marginTop: 50,
     marginLeft:20,
     marginRight: 20
   },
   loginBtn: {
-    width: "80%",
+    maxWidth: "80%",
+    minWidth:"40%",
     borderRadius: 25,
     height: 50,
     alignItems: "center",

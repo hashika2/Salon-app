@@ -137,14 +137,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between'
 	},
 	loginBtn: {
-		maxWidth: '80%',
+		maxWidth: '40%',
 		minWidth: '40%',
 		borderRadius: 25,
 		height: 50,
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginTop: 40,
-		marginLeft: 30,
+		marginLeft: 115,
 		marginRight: 30,
 		backgroundColor: 'green',
 		color: 'white'
