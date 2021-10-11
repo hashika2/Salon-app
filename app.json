@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "salon-app2",
+    "name": "salon-app",
     "slug": "salon-app2",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.hashika.salonapp2"
     },
     "web": {
       "favicon": "./assets/favicon.png"

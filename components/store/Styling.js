@@ -23,6 +23,7 @@ export default (Styling = ({ navigation, route }) => {
 					uri: avatar
 				}}
 			>
+			<Icon name="arrow-left" style={styles.ArraowIconView} size={25} color="black" type="font-awesome" />
 				<View style={styles.textView}>
 					<Text style={styles.imageText}>{name}</Text>
 					<Text style={styles.subimageText}>15 styling Staff</Text>
@@ -111,6 +112,11 @@ const styles = StyleSheet.create({
 	},
 	IconView: {
 		color: 'white'
+	},
+	ArraowIconView:{
+		paddingTop:20,
+		marginLeft:-300,
+		textAlign:"left"
 	},
 	cardContainer: {
 		backgroundColor: '#ffff',

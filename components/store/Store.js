@@ -140,6 +140,8 @@ const styles = StyleSheet.create({
 	},
 	loading:{
 		textAlign:"center",
-		justifyContent: 'center'
+		justifyContent: 'center',
+		fontSize:20,
+		fontWeight:"bold"
 	}
 });
