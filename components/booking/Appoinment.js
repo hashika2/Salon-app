@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { Card, ListItem, Icon } from 'react-native-elements';
 import { t } from 'react-native-tailwindcss';
 import getStyleData from '../../service/StyleData';
@@ -49,7 +49,7 @@ export default (Appoinment = ({ navigation, route }) => {
 								<Text>Hair Styling</Text>
 								<Text>${price}</Text>
 							</View>
-                            <View style={styles.serviceText}>
+							<View style={styles.serviceText}>
 								<Text>Tatal Price</Text>
 								<Text>${price}</Text>
 							</View>
@@ -57,6 +57,13 @@ export default (Appoinment = ({ navigation, route }) => {
 					</View>
 					{/* </ListItem> */}
 				</Card>
+				<View>
+					<TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Store')}>
+						<Text style={styles.loginText} color="#841584">
+							HOME
+						</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		</View>
 	);
@@ -128,5 +135,24 @@ const styles = StyleSheet.create({
 	serviceText: {
 		flexDirection: 'row',
 		justifyContent: 'space-between'
+	},
+	loginBtn: {
+		maxWidth: '80%',
+		minWidth: '40%',
+		borderRadius: 25,
+		height: 50,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginTop: 40,
+		marginLeft: 30,
+		marginRight: 30,
+		backgroundColor: 'green',
+		color: 'white'
+	},
+	loginText: {
+		fontSize: 20,
+		fontWeight: 'bold',
+		color: 'white'
+		// fontFamily:"fangsong"
 	}
 });

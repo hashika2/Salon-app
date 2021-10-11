@@ -21,7 +21,7 @@ export default (DateSelect = ({ navigation }) => {
 					 disabledDates= {desableDates}
 					 disabledDatesTextStyle={{backgroundColor:"orange", color:"black",borderRadius:15, width:30,height:25,textAlign:"center"}}
 					 onDateChange = {date => onDateChange(date)}
-					 selectedStartDate='2021-10-01T00:00:00.00Z'
+					//  selectedStartDate='2021-10-01T00:00:00.00Z'
 					 minDate= '2021-10-01T00:00:00.00Z'
 					 maxDate= '2021-10-31T00:00:00.00Z'
 				/>
