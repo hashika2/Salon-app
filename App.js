@@ -14,6 +14,7 @@ import DateSelect from './components/booking/DateSelect';
 import PickTime from './components/booking/PickTime';
 import BookList from './components/booking/BookList';
 import Appoinment from './components/booking/Appoinment';
+import ActionBarImage from './util/ActionBarImage';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -39,7 +40,8 @@ export default function App() {
 						title: 'Store',
 						headerStyle: { backgroundColor: 'green' },
 						headerTitleAlign: 'center',
-						headerTintColor: 'white'
+						headerTintColor: 'white',
+						headerRight:()=> <ActionBarImage/>
 					}}
 				/>
 				<Stack.Screen name="Styling" component={Styling} options={{ headerShown: false }} />
@@ -50,7 +52,8 @@ export default function App() {
 						title: 'Confirm Booking',
 						headerStyle: { backgroundColor: 'green' },
 						headerTitleAlign: 'center',
-						headerTintColor: 'white'
+						headerTintColor: 'white',
+						headerRight:()=> <ActionBarImage/>
 					}}
 				/>
 				<Stack.Screen
@@ -60,7 +63,8 @@ export default function App() {
 						title: 'Confirm Booking',
 						headerStyle: { backgroundColor: 'green' },
 						headerTitleAlign: 'center',
-						headerTintColor: 'white'
+						headerTintColor: 'white',
+						headerRight:()=> <ActionBarImage/>
 					}}
 				/>
 				<Stack.Screen
@@ -70,7 +74,8 @@ export default function App() {
 						title: 'Your Appoinment',
 						headerStyle: { backgroundColor: 'green' },
 						headerTitleAlign: 'center',
-						headerTintColor: 'white'
+						headerTintColor: 'white',
+						headerRight:()=> <ActionBarImage/>
 					}}
 				/>
 				<Stack.Screen name="Appoinment" component={Appoinment} options={{ headerShown: false }} />
