@@ -54,7 +54,7 @@ export default (Store = ({ navigation }) => {
 				</ScrollView>
 			</View>
 		</View>
-	):<Text>Loading ....</Text>;
+	):<Text style={styles.loading}>Loading ....</Text>;
 });
 
 const styles = StyleSheet.create({
@@ -137,5 +137,9 @@ const styles = StyleSheet.create({
 	},
 	signUp: {
 		color: 'green'
+	},
+	loading:{
+		textAlign:"center",
+		justifyContent: 'center'
 	}
 });

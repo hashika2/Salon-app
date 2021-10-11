@@ -10,7 +10,7 @@ export default StackHeader =({scene,navigation}) => {
     return(
         <Appbar.Header style={styles.bottom}>
         <Appbar.BackAction onPress={_goBack} />
-            <Appbar.Content title="Store"/>
+            <Appbar.Content title={'title'}/>
             <Appbar.Action icon="magnify" />
         </Appbar.Header>
     )
