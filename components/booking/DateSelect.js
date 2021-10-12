@@ -23,7 +23,7 @@ export default (DateSelect = ({ navigation }) => {
 					 onDateChange = {date => onDateChange(date)}
 					//  selectedStartDate='2021-10-01T00:00:00.00Z'
 					 minDate= '2021-10-01T00:00:00.00Z'
-					 maxDate= '2021-10-31T00:00:00.00Z'
+					//  maxDate= '2021-10-31T00:00:00.00Z'
 				/>
 				<View style={{flexDirection: 'row',paddingTop:40, marginLeft:30}}>
 				<Icon name="circle" size={25} color="orange"/>

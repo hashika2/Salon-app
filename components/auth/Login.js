@@ -38,7 +38,7 @@ export default Login = ({ navigation }) => {
 						onChangeText={onChangeNumber}
 						value={number}
 						placeholder="Password"
-						keyboardType="numeric"
+						keyboardType="visible-password"
 					/>
 				</View>
 				<TouchableOpacity>
