@@ -11,6 +11,6 @@ export default (Drawer = () => {
 				<Drawer.Screen name="Setting" component={Setting} />
 				<Drawer.Screen name="Profile" component={Profile} />
 			</Drawer.Navigator>
-		 </NavigationContainer>
+		</NavigationContainer>
 	);
 });
